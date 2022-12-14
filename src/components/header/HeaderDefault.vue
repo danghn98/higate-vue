@@ -3,17 +3,17 @@
     class="bg-white dark:bg-white border-b border-b-body-text/[0.1] sticky top-0 z-50 duration-300"
   >
     <div
-      class="flex justify-between items-center px-[16px] 768:px-[30px] 1440:px-0 max-w-[1128px] mx-auto"
+      class="flex justify-between items-center px-[16px] md:px-[30px] xl2:px-0 max-w-[1128px] mx-auto"
     >
       <div class="flex items-center">
         <div
-          class="block w-[93.60px] pt-[22px] pb-[23px] 800:w-[142.75px] cursor-pointer"
+          class="block w-[93.60px] pt-[22px] pb-[23px] lg:w-[142.75px] cursor-pointer"
         >
           <div>
             <img src="@/assets/images/Logo-light.png" alt="logo" />
           </div>
         </div>
-        <ul class="hidden lg:flex 1024:ml-[30px] 1280:ml-[49.25px]">
+        <ul class="hidden lg:flex lg:ml-[49.25px]">
           <li
             class="group relative flex ml-[32px] items-center text-title-text text-body-text2 pt-[30px] pb-[31px] font-OpenSans font-semibold leading-[20.02px]"
           >
@@ -287,8 +287,8 @@
           </li>
         </ul>
       </div>
-      <div class="flex items-center 1440:mt-[22px] 1440:mb-[23px]">
-        <div class="flex mr-[13px] 768:mr-0 1280:hidden">
+      <div class="flex items-center xl2:mt-[22px] xl2:mb-[23px]">
+        <div class="flex mr-[13px] md:mr-0 xl:hidden">
           <div>
             <button
               class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiExample_Component-menu_bar css-1ujsas3"
@@ -319,7 +319,7 @@
           </div>
         </div>
         <div
-          class="text-primary-1 text-center relative group overflow-hidden px-4 py-2 text-body-text1 mr-[13px] cursor-pointer hover:bg-[#0f23d00a] font-OpenSans font-semibold items-center justify-center rounded hidden 768:flex"
+          class="text-primary-1 text-center relative group overflow-hidden px-4 py-2 text-body-text1 mr-[13px] cursor-pointer hover:bg-[#0f23d00a] font-OpenSans font-semibold items-center justify-center rounded hidden md:flex"
         >
           <a href="https://higate.io/remote-developer-jobs"
             >Find Jobs<span
@@ -328,7 +328,7 @@
           ></a>
         </div>
         <div
-          class="w-[155px] h-[40px] relative group overflow-hidden text-center cursor-pointer text-secondary hover:bg-[#0B1992] active:bg-primary-1 text-body-text1 font-OpenSans font-semibold bg-primary-1 items-center justify-center rounded hidden 768:flex"
+          class="w-[155px] h-[40px] relative group overflow-hidden text-center cursor-pointer text-secondary hover:bg-[#0B1992] active:bg-primary-1 text-body-text1 font-OpenSans font-semibold bg-primary-1 items-center justify-center rounded hidden md:flex"
         >
           <a href="https://console.higate.io/f/your-post-p"
             >Hire Candidates<span

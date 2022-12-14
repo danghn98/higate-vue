@@ -9,7 +9,8 @@ module.exports = {
       md: "768px",
       lg: "1024px",
       xl: "1280px",
-      "2xl": "1536px",
+      xl2: "1440px",
+      xl3: "1536px",
     },
     supports: {},
     colors: ({ colors }) => ({
@@ -40,6 +41,22 @@ module.exports = {
       fuchsia: colors.fuchsia,
       pink: colors.pink,
       rose: colors.rose,
+      'primary-1': '#0F23D0',
+      'secondary': '#ffffff',
+      'tertiary': '#6776F3',
+      'body-text': '#00000099',//rgba(0, 0, 0, 0.6)//
+      'title-text': '#000000de', //rgba(0,0,0,0.87)//
+      'description': '#0000004D', //rgba(0, 0, 0, 0.3)//
+      'during': '#00000000',
+      'button-primary': '#0F23D0',
+      'button-secondary': '#ffffff',
+      'dropdown-bg': '#001acc',
+      'bg-blue': '#0B1992',
+      'border-l': '#0F23D0',
+      'border-2': '#0000001F',//rgba(0, 0, 0, 0.12)//
+      'tab-active': 'rgba(15, 35, 208, 0.04)',
+      'border-active': 'rgba(15, 35, 208, 0.08)',
+      'background-linear': 'linear-gradient(58.17deg, rgba(85, 103, 255, 0.16) 6.62%, rgba(85, 103, 255, 0) 63.21%), #FFFFFF;'
     }),
     columns: {
       auto: "auto",
@@ -399,6 +416,10 @@ module.exports = {
         '"Courier New"',
         "monospace",
       ],
+      body: [
+        "Open Sans",
+        "sans-serif",
+      ]
     },
     fontSize: {
       xs: ["0.75rem", { lineHeight: "1rem" }],
