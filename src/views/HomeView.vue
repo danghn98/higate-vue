@@ -10,23 +10,24 @@
           class="pt-8 pb-[43px] order-last xl2:order-first xl2:pt-[96px] xl2:pb-[26px]"
         >
           <img
-            :src="`https:${dataModel[0]?.fields?.bannerImage.fields.file.url}`"
+            v-if="dataModel[0]?.fields?.bannerImage"
+            :src="`https:${dataModel[0].fields.bannerImage.fields.file.url}`"
             alt=""
           />
         </div>
         <div class="max-w-[825px] pt-[48px] xl2:pt-0">
           <h1
+            v-if="dataModel[0]?.fields?.bannerTitle"
+            v-html="convertHtml(dataModel[0]?.fields?.bannerTitle.content)"
             class="text-title-text text-[36px] leading-[43.2px] text-center xl2:text-[64px] xl2:leading-[76.8px] font-OpenSans font-bold"
-          >
-            Remotely hire the <br class="375:hidden xl2:flex" />
-            <span class="text-primary-1">top talent</span> in the world
-          </h1>
+          ></h1>
         </div>
         <div
           class="max-w-[552px] pt-4 text-body-text2 leading-body-text2 xl2:pt-4 xl2:pb-[96px] md:text-body-text1 text-center text-body-text font-OpenSans font-normal md:leading-[22.88px]"
         >
-          The best place to identify, engage, and recruit global talents to help
-          your business expand without boundaries.
+          {{
+            dataModel[0]?.fields?.bannerDescription.content[0].content[0].value
+          }}
         </div>
       </div>
     </div>
@@ -56,7 +57,7 @@
             <div
               class="text-body-text1 text-body-text font-OpenSans font-normal leading-body-text1 w-[275px] md:w-[196px]"
             >
-              Access to the pool of remote software developers.
+              {{ dataModel[0]?.fields?.bodyTopContent[0] }}
             </div>
           </div>
         </div>
@@ -82,7 +83,7 @@
             <div
               class="text-body-text1 text-body-text font-OpenSans font-normal leading-body-text1 w-[275px] md:w-[196px]"
             >
-              Proven success from leading partners and experts.
+              {{ dataModel[0]?.fields?.bodyTopContent[1] }}
             </div>
           </div>
         </div>
@@ -108,7 +109,7 @@
             <div
               class="text-body-text1 text-body-text font-OpenSans font-normal leading-body-text1 w-[275px] md:w-[196px]"
             >
-              Follow non-disclosure agreements and secured payment.
+              {{ dataModel[0]?.fields?.bodyTopContent[2] }}
             </div>
           </div>
         </div>
@@ -121,25 +122,27 @@
         >
           <div class="w-full xl2:w-[480px] md:self-center">
             <div
+              v-if="dataModel[0]?.fields?.hiringTitle"
+              v-html="convertHtml(dataModel[0]?.fields?.hiringTitle.content)"
               class="text-title-text text-[28px] leading-[33.6px] mb-[20px] lg:text-[42px] lg:leading-[50.4px] xl2:mb-8 font-OpenSans font-bold"
-            >
-              Hiring international employees is complex.
-              <span class="text-primary-1">HiGate makes it easy.</span>
-            </div>
+            ></div>
             <div
               class="text-body-text1 text-body-text font-OpenSans leading-body-text1"
             >
               <div class="hire-para-1">
                 <p>
-                  Giving your team the opportunity to collaborate with highly
-                  qualified experts and agencies.
+                  {{
+                    dataModel[0]?.fields?.hiringTopPara1.content[0].content[0]
+                      .value
+                  }}
                 </p>
               </div>
               <div class="hire-para-2 mt-[26px] md:mt-[32px] max-w-[450px]">
                 <p>
-                  We'll work with your team to better understand the level of
-                  resources, talents, and services you need and develop
-                  connections with professionals who can help you with that.
+                  {{
+                    dataModel[0]?.fields?.hiringTopPara2.content[0].content[0]
+                      .value
+                  }}
                 </p>
               </div>
             </div>
@@ -166,7 +169,8 @@
             class="flex md:justify-start w-[343px] h-[297px] md:max-w-[552px] md:max-h-[478px] xl2:w-[552px] xl2:h-[478px] relative"
           >
             <img
-              :src="`https:${dataModel[0]?.fields?.hiringImage.fields.file.url}`"
+              v-if="dataModel[0]?.fields?.hiringImage"
+              :src="`https:${dataModel[0].fields.hiringImage.fields.file.url}`"
               alt=""
             />
           </div>
@@ -191,8 +195,7 @@
               data-aos-easing="ease-in-out"
               data-aos-offset="-150"
             >
-              Expert-vetted talents will be hand-picked by our professional
-              talent managers.
+              {{ dataModel[0]?.fields?.hiringBottomPara[0] }}
             </div>
           </div>
           <div
@@ -212,8 +215,7 @@
               data-aos-easing="ease-in-out"
               data-aos-offset="-150"
             >
-              Extreme saving. HiGate costs you nothing to join and recruit top
-              talents.
+              {{ dataModel[0]?.fields?.hiringBottomPara[1] }}
             </div>
           </div>
           <div
@@ -233,8 +235,7 @@
               data-aos-easing="ease-in-out"
               data-aos-offset="-150"
             >
-              HiGate streamlines the talent acquisition process to meet unique
-              requirements.
+              {{ dataModel[0]?.fields?.hiringBottomPara[2] }}
             </div>
           </div>
           <div
@@ -254,7 +255,7 @@
               data-aos-easing="ease-in-out"
               data-aos-offset="-150"
             >
-              You may also swiftly rehire the specialists you trust.
+              {{ dataModel[0]?.fields?.hiringBottomPara[3] }}
             </div>
           </div>
         </div>
@@ -267,26 +268,25 @@
         class="order-last justify-self-center md:justify-self-start md:order-first xl2:max-w-[512px] 1920:max-w-[543px] self-center"
       >
         <img
-          :src="`https:${dataModel[0]?.fields?.developerImage.fields.file.url}`"
+          v-if="dataModel[0]?.fields?.developerImage"
+          :src="`https:${dataModel[0].fields.developerImage.fields.file.url}`"
           alt=""
         />
       </div>
       <div class="md:max-w-[560px] flex flex-col ml-0 1920:pl-[30px]">
         <div class="mb-8">
           <div
+            v-if="dataModel[0]?.fields?.developerTitle"
+            v-html="convertHtml(dataModel[0].fields.developerTitle.content)"
             class="text-[28px] leading-[33.6px] xl2:text-[42px] xl2:leading-[50.4px] mb-[20px] md:mb-[32px] text-title-text dark:text-title-text font-OpenSans font-bold"
-          >
-            Why do the top<br class="480:hidden xl2:flex" />
-            <span class="text-primary-1">developers and agencies</span> join
-            HiGate?
-          </div>
+          ></div>
           <div
             class="text-body-text1 text-body-text leading-[22.88px] font-OpenSans xl2:w-[552px]"
           >
-            <p>
-              HiGate will assist you to connect with the best-fitted clients. We
-              have ideal solutions for developers and agencies to connect and
-              collaborate securely, regardless of your services or skills.
+            <p v-if="dataModel[0]?.fields?.developerDescription">
+              {{
+                convertHtml(dataModel[0]?.fields?.developerDescription.content)
+              }}
             </p>
           </div>
         </div>
@@ -310,7 +310,7 @@
               data-aos-easing="ease-in-out"
               data-aos-offset="-150"
             >
-              Get access to myriads of verified jobs worldwide.
+              {{ dataModel[0]?.fields?.developerPara[0] }}
             </div>
           </div>
           <div
@@ -330,7 +330,7 @@
               data-aos-easing="ease-in-out"
               data-aos-offset="-150"
             >
-              Rest assured that your personal information is confidential.
+              {{ dataModel[0]?.fields?.developerPara[1] }}
             </div>
           </div>
           <div
@@ -350,7 +350,7 @@
               data-aos-easing="ease-in-out"
               data-aos-offset="-150"
             >
-              Get paid securely and on time.
+              {{ dataModel[0]?.fields?.developerPara[2] }}
             </div>
           </div>
         </div>
@@ -372,9 +372,10 @@
               <div
                 class="text-center text-[20px] leading-[24px] md:text-[36px] font-OpenSans md:leading-[43.2px] font-bold"
               >
-                <p>
-                  More than 100,000 developers over the world have already
-                  joined HiGate
+                <p v-if="dataModel[0]?.fields?.bodyBottomTitle">
+                  {{
+                    convertHtml(dataModel[0]?.fields?.bodyBottomTitle.content)
+                  }}
                 </p>
               </div>
             </div>
@@ -387,8 +388,16 @@
                 <div
                   class="flex text-center text-[42px] font-bold leading-[50.4px] mb-2 font-OpenSans"
                 >
-                  <div>
-                    <p class="font-OpenSans">20</p>
+                  <div ref="1">
+                    <p class="font-OpenSans">
+                      <VueJsCounter
+                        start="0"
+                        end="20"
+                        duration="1000"
+                        thousand="."
+                        decimal=","
+                      ></VueJsCounter>
+                    </p>
                   </div>
                   +
                 </div>
@@ -405,7 +414,15 @@
                   class="flex text-center text-[42px] font-bold leading-[50.4px] mb-2 font-OpenSans"
                 >
                   <div>
-                    <p class="font-OpenSans">100</p>
+                    <p class="font-OpenSans">
+                      <VueJsCounter
+                        start="0"
+                        end="100"
+                        duration="1000"
+                        thousand="."
+                        decimal=","
+                      ></VueJsCounter>
+                    </p>
                   </div>
                   +
                 </div>
@@ -420,7 +437,15 @@
                   class="flex justify-center text-center text-[42px] font-bold leading-[50.4px] mb-2 font-OpenSans"
                 >
                   <div>
-                    <p class="font-OpenSans">5</p>
+                    <p class="font-OpenSans">
+                      <VueJsCounter
+                        start="0"
+                        end="5"
+                        duration="1000"
+                        thousand="."
+                        decimal=","
+                      ></VueJsCounter>
+                    </p>
                   </div>
                   +
                 </div>
@@ -458,22 +483,38 @@
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
+// import { convertHtml } from "@/include/utils.js";
 // import axios from "axios";
 // import contentful from "contentful";
+import VueJsCounter from "vue-js-counter";
 const contentful = require("contentful");
 
 export default {
   name: "HomeView",
+  components: {
+    VueJsCounter,
+  },
   data() {
     return {
       dataModel: [],
+      test: "",
     };
   },
   mounted() {
     this.getDataModel();
+    // this.getDes();
   },
   methods: {
+    convertHtml(value) {
+      // console.log(1);
+      var html = "";
+      for (var i = 0; i < value.length; i++) {
+        for (var j = 0; j < value[i].content.length; j++) {
+          html += value[i].content[j].value;
+        }
+      }
+      return html;
+    },
     async getDataModel() {
       // const entry = "homepage";
 
