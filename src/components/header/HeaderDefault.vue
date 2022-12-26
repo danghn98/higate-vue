@@ -321,8 +321,8 @@
         <div
           class="text-primary-1 text-center relative group overflow-hidden px-4 py-2 text-body-text1 mr-[13px] cursor-pointer hover:bg-[#0f23d00a] font-OpenSans font-semibold items-center justify-center rounded hidden md:flex"
         >
-          <a href="https://higate.io/remote-developer-jobs"
-            >Find Jobs<span
+          <a href="/blogs"
+            >Blogs<span
               class="absolute w-0 h-0 transition-all duration-500 ease-in-out bg-[#0f23d04d] rounded-full group-active:w-40 group-active:h-40 opacity-10"
             ></span
           ></a>

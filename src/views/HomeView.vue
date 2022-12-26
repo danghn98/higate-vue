@@ -533,7 +533,7 @@ export default {
       });
 
       const res = await client.getEntries({ content_type: "homepage" });
-      console.log(res.items);
+      // console.log(res.items);
       this.dataModel = res.items;
     },
   },
