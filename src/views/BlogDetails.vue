@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-details">
+  <div v-if="this.dataBlog" class="blog-details">
     <div class="bg-bg-blue">
       <div
         class="px-4 md:px-[30px] max-w-[1062px] xl2:max-w-[1128px] lg:px-0 m-auto pt-[41px] pb-[58px] lg:pt-[70px] lg:pb-[98px] text-center lg:text-left text-secondary"
@@ -65,6 +65,9 @@
       </div>
     </div>
   </div>
+  <div v-else>
+    <h2 class="text-center py-[90px] text-[60px]">404 NOT FOUND</h2>
+  </div>
 </template>
 
 <script>
@@ -74,6 +77,7 @@ const contentful = require("contentful");
 
 export default {
   name: "BlogDetails",
+  props: ["id"],
   data() {
     return {
       dataBlog: [],
@@ -119,11 +123,12 @@ export default {
       //   this.dataBlog = entry.items;
       // });
       try {
-        await client.getEntry(this.$route.params.id).then((entries) => {
+        await client.getEntry(this.id).then((entries) => {
           console.log(entries);
           this.dataBlog = entries;
         });
       } catch (error) {
+        this.dataBlog = undefined;
         console.log(error);
       }
       // this.dataBlog = blog.items;
